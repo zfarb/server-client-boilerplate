@@ -11,11 +11,13 @@ function Header() {
     };
 
     return (
-        <div>
+        <div className="flex items-center">
             <Link to="/">Home</Link>
-            <Link to="/signup">Sign Up</Link>
             {!token ? (
-                <Link to="/signin">Sign In</Link>
+                <div>
+                    <Link to="/signup">Sign Up</Link>
+                    <Link to="/signin">Sign In</Link>
+                </div>
             ) : (
                 <Link to="/" onClick={handleSignout}>
                     Sign Out

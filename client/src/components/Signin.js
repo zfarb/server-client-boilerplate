@@ -21,28 +21,31 @@ function Signin(props) {
     }, [isSuccess, navigate]);
 
     return (
-        <form onSubmit={handleSubmit(onFormSubmit)}>
-            <fieldset>
-                <label>Email: </label>
-                <Field
-                    name="email"
-                    type="text"
-                    component="input"
-                    autoComplete="none"
-                />
-            </fieldset>
-            <fieldset>
-                <label>Password: </label>
-                <Field
-                    name="password"
-                    type="password"
-                    component="input"
-                    autoComplete="none"
-                />
-            </fieldset>
-            {auth.error && ' ' + auth.error}
-            <button>Sign In</button>
-        </form>
+        <div>
+            <form onSubmit={handleSubmit(onFormSubmit)}>
+                <fieldset>
+                    <label>Email: </label>
+                    <Field
+                        name="email"
+                        type="text"
+                        component="input"
+                        autoComplete="none"
+                    />
+                </fieldset>
+                <fieldset>
+                    <label>Password: </label>
+                    <Field
+                        name="password"
+                        type="password"
+                        component="input"
+                        autoComplete="none"
+                    />
+                </fieldset>
+                {auth.error && ' ' + auth.error}
+                <button>Sign In</button>
+            </form>
+            <a href="/auth/google">Login with Google</a>
+        </div>
     );
 }
 
